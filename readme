@@ -1,2 +1,0 @@
-We are using the adapter pattern so that we do not import services in the frontend part of the application.
-The pages/api folder would handle all data-fetch logic
