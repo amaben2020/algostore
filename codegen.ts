@@ -3,23 +3,22 @@ import type { CodegenConfig } from "@graphql-codegen/cli";
 const config: CodegenConfig = {
   schema: [
     {
-      [`https://${process.env.NEXT_PUBLIC_SWELL_STORE_ID}.swell.store/graphql`]:
-        {
-          headers: {
-            Authorization: process.env.NEXT_PUBLIC_SWELL_PUBLIC_KEY,
-          },
+      [`${process.env.SWELL_PUBLIC_URL}`]: {
+        headers: {
+          Authorization: `${process.env.NEXT_PUBLIC_SWELL_KEY}`,
         },
+      },
     },
   ],
 
-  documents: ["src/**/*.tsx"],
   generates: {
-    "path/to/file.ts": {
+    "./src/generated/": {
       plugins: [
         "typescript",
         "typescript-operations",
         "typescript-graphql-request",
       ],
+      documents: ["src/**/*.ts", "src/**/*.graphql"],
       config: {
         rawRequest: true,
       },

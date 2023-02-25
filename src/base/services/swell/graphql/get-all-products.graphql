@@ -1,0 +1,44 @@
+query getAllProducts {
+  products {
+    results {
+      id
+      name
+      slug
+      price
+      currency
+      options {
+        id
+        attributeId
+        name
+        inputType
+        active
+        required
+        variant
+        values {
+          id
+          name
+          price
+          description
+        }
+      }
+      purchaseOptions {
+        standard {
+          price
+          sale
+          salePrice
+        }
+        subscription {
+          plans {
+            id
+            name
+            price
+            billingSchedule {
+              interval
+              intervalCount
+            }
+          }
+        }
+      }
+    }
+  }
+}
