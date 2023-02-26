@@ -19,6 +19,11 @@ export default async function handler(
             slug
             price
             currency
+            images {
+              file {
+                url
+              }
+            }
             options {
               id
               attributeId

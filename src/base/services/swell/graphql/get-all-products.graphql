@@ -6,6 +6,11 @@ query getAllProducts {
       slug
       price
       currency
+      images {
+        file {
+          url
+        }
+      }
       options {
         id
         attributeId

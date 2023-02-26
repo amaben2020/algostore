@@ -1,6 +1,7 @@
 import axios from "axios";
 import type { NextPage } from "next";
 import Head from "next/head";
+import { Card } from "../components/card";
 
 const Home: NextPage = ({ products }: any) => {
   console.log("products", products);
@@ -11,13 +12,9 @@ const Home: NextPage = ({ products }: any) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="flex w-full flex-1 flex-col items-center justify-center px-20 text-center">
-        {products.data.products.results.map((p: any) => (
-          <div >
-            <h4>{p.name}</h4>
-
-            <p>${p.price}</p>
-          </div>
+      <main className="flex flex-wrap justify-center align-middle">
+        {products.data?.products.results.map((p: any) => (
+          <Card name={p.name} price={p.price} image={p.images[0].file.url} />
         ))}
       </main>
     </div>

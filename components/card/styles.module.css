@@ -1,0 +1,9 @@
+.card {
+  @apply shadow-md max-w-3xl rounded-sm m-4 p-4;
+}
+
+.image {
+  @apply relative;
+  width: 250px;
+  height: 250px;
+}
