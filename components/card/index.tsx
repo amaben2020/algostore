@@ -1,7 +1,13 @@
 import Image from "next/image";
 import styles from "./styles.module.css";
 
-export const Card = ({ name, price, image }) => {
+type TCard = {
+  name: string;
+  price: string;
+  image: string;
+};
+
+export const Card = ({ name, price, image }: TCard) => {
   return (
     <div className={styles.card}>
       <p>{name}</p>
