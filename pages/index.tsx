@@ -14,7 +14,12 @@ const Home: NextPage = ({ products }: any) => {
 
       <main className="flex flex-wrap justify-center align-middle">
         {products.data?.products.results.map((p: any) => (
-          <Card name={p.name} price={p.price} image={p.images[0].file.url} />
+          <Card
+            id={p.id}
+            name={p.name}
+            price={p.price}
+            image={p.images[0].file.url}
+          />
         ))}
       </main>
     </div>

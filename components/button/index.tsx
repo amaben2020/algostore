@@ -6,7 +6,11 @@ type TButton = {
 };
 
 const Button = ({ onClick, text }: TButton) => {
-  return <button className={styles.button}>{text}</button>;
+  return (
+    <button onClick={onClick} className={styles.button}>
+      {text}
+    </button>
+  );
 };
 
 export default Button;

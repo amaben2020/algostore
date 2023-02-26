@@ -18,4 +18,15 @@ export class SwellService {
       console.log("error", error);
     }
   }
+  public async addToCart(query: string, productId: string, quantity: number) {
+    try {
+      const data = await this.client.request(query, {
+        productId,
+        quantity,
+      });
+      return data;
+    } catch (error) {
+      console.log("error", error);
+    }
+  }
 }
