@@ -29,4 +29,13 @@ export class SwellService {
       console.log("error", error);
     }
   }
+
+  public async getCartItems(query: string) {
+    try {
+      const data = await this.client.request(query);
+      return data;
+    } catch (error) {
+      console.log("error", error);
+    }
+  }
 }

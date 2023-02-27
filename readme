@@ -1,0 +1,5 @@
+connection url: https://api.cloudamqp.com/console/05a57fe8-e1b4-463c-b736-5ae0d2170e05/details
+
+dashboard: https://crow.rmq.cloudamqp.com/#/
+
+View connection: https://crow.rmq.cloudamqp.com/#/connections

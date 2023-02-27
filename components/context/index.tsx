@@ -1,3 +1,8 @@
-import { createContext } from "react";
+import { createContext, DispatchWithoutAction } from "react";
 
-export const CartContext = createContext([]);
+type ContextValues = {
+  state: any;
+  dispatch: DispatchWithoutAction;
+};
+
+export const CartContext = createContext<any>(null);
