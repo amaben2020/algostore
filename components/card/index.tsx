@@ -40,10 +40,13 @@ export const Card = ({ id, name, price, image }: TCard) => {
           payload: data.data.data.addCartItem.items,
         });
         setValue(data.data.data.addCartItem.items);
+
         await axios.post("http://localhost:3000/api/message-producer", {
           info: data.data.data.addCartItem.items,
         });
-        route.push("/cart");
+
+        await axios.get("http://localhost:3000/api/message-consumer");
+        // route.push("/cart");
       }
     } catch (error) {
       console.log("error", error);

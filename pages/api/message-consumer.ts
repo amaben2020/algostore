@@ -1,6 +1,6 @@
 const amqp = require("amqplib/callback_api");
 
-export const handler = (req: any, res: any) => {
+const handler = (req: any, res: any) => {
   try {
     amqp.connect(
       "amqps://rthakaji:GFr-JJjbK1_GQUmkh4BUK0gpxjwSi4rL@crow.rmq.cloudamqp.com/rthakaji",
@@ -24,22 +24,6 @@ export const handler = (req: any, res: any) => {
             console.log("Received '%s'", msg.content.toString());
             console.log("Parsed", JSON.parse(msg.content));
 
-            // hey, do whatever you want with the message in the queue
-            const array = [];
-
-            array.push(JSON.parse(msg.content));
-
-            array.map((message) => ({
-              id: 1,
-              info: message.name,
-              nodemailer: true,
-              occup: message.occupation,
-            }));
-
-            console.log("Array created", array);
-
-            // ends here
-
             setTimeout(function () {
               channel.ack(msg);
             }, 1000);
@@ -51,3 +35,5 @@ export const handler = (req: any, res: any) => {
     console.log(error);
   }
 };
+
+export default handler;
